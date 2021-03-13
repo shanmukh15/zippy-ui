@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.template-background {
+    background-image: url("../../assests/78797.jpg");
+    background-size: contain;
+    opacity: 0.3;
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 80%;
+  }
+
+.template-shade {
+  /*background: linear-gradient(180deg, #F2F2F2 0%, #F2F2F2 25%, #002E40 25%, #002E40 100%);*/
+  background: #002E40;
+}
+
+.login-image {
+  background-image: url('../../assests/ej-yao-D46mXLsQRJw-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

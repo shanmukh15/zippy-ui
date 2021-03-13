@@ -1,0 +1,46 @@
+{
+  "name": "zippy",
+  "version": "1.0.0",
+  "description": "Your digital connect to realtors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod:start": "webpack serve --mode production --hot --config webpack.config.prod.js",
+    "prod:build": "webpack --mode production --config webpack.config.prod.js",
+    "dev:start": "webpack serve --mode development --hot --config webpack.config.dev.js",
+    "dev:build": "webpack --mode development --config webpack.config.dev.js",
+    "local:start": "webpack serve --mode development --hot --config webpack.config.local.js",
+    "local:build": "webpack --mode development --config webpack.config.local.js",
+    "lint": "eslint src/**/*.js src/**/*.jsx"
+  },
+  "author": "shanmukh.rao15@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.13.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.0.0",
+    "css-loader": "^5.1.2",
+    "eslint": "^7.21.0",
+    "eslint-plugin-react": "^7.22.0",
+    "html-webpack-plugin": "^5.3.1",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "postcss-loader": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "tailwindcss": "^2.0.3",
+    "webpack": "^5.25.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
