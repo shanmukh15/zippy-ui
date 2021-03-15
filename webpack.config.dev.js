@@ -26,15 +26,15 @@ module.exports = {
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/zippy/",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
     filename: "bundle.js",
     clean: true
   },
   devServer: {
-    contentBase: path.join(__dirname, "/dist"),
+    contentBase: path.join(__dirname, "dist"),
     port: 3000,
-    publicPath: "http://localhost:3000/zippy",
+    publicPath: "/",
     hotOnly: true,
   },
   plugins: [
