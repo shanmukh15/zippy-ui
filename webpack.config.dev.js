@@ -32,7 +32,7 @@ module.exports = {
     clean: true
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, "dist/"),
     port: 3000,
     publicPath: "/",
     hotOnly: true,

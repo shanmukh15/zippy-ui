@@ -1,0 +1,10 @@
+export const PROJECT_STATUS = {
+    PROSPECT: 'PROSPECT',
+    CONTRACT: 'CONTRACT'
+};
+
+export const USER_TYPE = {
+    EMLOYEE: 'EMPLOYEE',
+    BUYER: 'BUYER',
+    BUILDER: 'BUILDER'
+}
