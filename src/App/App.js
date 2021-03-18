@@ -13,6 +13,7 @@ class App extends Component {
     super(props);
     this.state = {
       authenticated: true,
+      
     };
   }
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
             <HeroBar breadcrumbs={breadcrumbs} />
             <div className="template-shade min-h-screen">
               <main className="bg-white shadow-xl rounded-xl relative -inset-y-20 mx-0 md:-inset-y-22 md:mx-6 lg:-inset-y-24 lg:mx-10 xl:mx-14">
-                <div className="lg:px-10 lg:py-5">
+                <div className="lg:py-3">
                   <div className="min-h-screen py-4 px-1">
                     <UserMaintenanceLanding />
                   </div>
