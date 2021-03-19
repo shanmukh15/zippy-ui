@@ -4,7 +4,7 @@ import UserSearchItem from "./UserSearchItem";
 import { PROJECT_STATUS, USER_TYPE } from "../constants";
 import UserDetails from "./UserDetails";
 import ProjectInfo from "./ProjectInfo";
-
+import UserForm from './UserForm';
 class UserMaintenanceLanding extends Component {
   constructor(props) {
     super(props);
@@ -87,6 +87,10 @@ class UserMaintenanceLanding extends Component {
 
         <div>
           <ProjectInfo type="new" project={this.state.searchResults[0].projects[0]} />
+        </div>
+
+        <div>
+          <UserForm type="new" user="" />
         </div>
       </>
     );
