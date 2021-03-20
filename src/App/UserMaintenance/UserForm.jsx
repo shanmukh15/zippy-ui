@@ -2,25 +2,59 @@ import React, { useState } from "react";
 import StyledTextBox from "../FormComponents/StyledTextBox";
 import StyledSelectBox from "../FormComponents/StyledSelectBox";
 import StyledMultiSelect from "../FormComponents/StyledMultiSelect";
+import { USER_TYPE } from "../constants";
 
-const COUNTRY_LIST = [];
-const STATE_LIST = [];
-const CITY_LIST = ['1', '2','4','67'];
-const USER_TYPE_LIST = [];
+const COMMUNITY_LIST = ["cert", "erter", "rhfghj", "eyfdb"];
+const LOT_LIST = ["l1", "l2", "l3", "l4"];
+const COUNTRY_LIST = [
+  "12",
+  "121",
+  "1212",
+  "1ert2",
+  "f",
+  "1g2",
+  "2w1",
+  "1k2",
+  "1/2",
+  "1",
+  "2",
+  "1sd2",
+  "1sdgq2",
+];
+const STATE_LIST = [
+  "12",
+  "121",
+  "1212",
+  "1ert2",
+  "f",
+  "1g2",
+  "2w1",
+  "1k2",
+  "1/2",
+  "1",
+  "2",
+  "1sd2",
+  "1sdgq2",
+];
+const CITY_LIST = ["1", "2", "4", "67"];
+const USER_TYPE_LIST = Object.values(USER_TYPE);
 
 const UserForm = (props) => {
-  const [userType, setUserType] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [middleName, setMiddleName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [address1, setAddress1] = useState("");
-  const [address2, setAddress2] = useState("");
-  const [country, setCountry] = useState("");
-  const [city, setCity] = useState("");
-  const [stateValue, setStateValue] = useState("");
-  const [zip, setZip] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+  const {user} = props;
+  const [userType, setUserType] = useState(props.role);
+  const [firstName, setFirstName] = useState(user.firstName);
+  const [middleName, setMiddleName] = useState(user.middleName);
+  const [lastName, setLastName] = useState(user.lastName);
+  const [address1, setAddress1] = useState(user.address1);
+  const [address2, setAddress2] = useState(user.address2);
+  const [country, setCountry] = useState(user.country);
+  const [city, setCity] = useState(user.city);
+  const [stateValue, setStateValue] = useState(user.stateValue);
+  const [zip, setZip] = useState(user.zip);
+  const [phone, setPhone] = useState(user.phone);
+  const [email, setEmail] = useState(user.email);
+  const [communities, setCommunities] = useState(user.communities || []);
+  const [lots, setLots] = useState(user.lots || []);
 
   return (
     <>
@@ -85,7 +119,7 @@ const UserForm = (props) => {
             />
           </div>
           <div>
-            <StyledMultiSelect
+            <StyledSelectBox
               label={"City"}
               value={city}
               required={true}
@@ -141,6 +175,28 @@ const UserForm = (props) => {
             />
           </div>
         </div>
+        {props.role === USER_TYPE.EMLOYEE && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div>
+              <StyledMultiSelect
+                label={"Community"}
+                value={communities}
+                required={true}
+                onChange={setCommunities}
+                options={COMMUNITY_LIST}
+              />
+            </div>
+            <div>
+              <StyledMultiSelect
+                label={"LOT"}
+                value={lots}
+                required={true}
+                onChange={setLots}
+                options={LOT_LIST}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
