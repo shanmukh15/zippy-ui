@@ -1,16 +1,17 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 const BreadCrumbs = (props) => {
   let pathCrumbs = "";
   if (props.items && props.items.length > 1) {
     pathCrumbs = props.items.map((item, index) => (
-      <span key={item}>
-        <a
-          href="#"
+      <span key={item.label}>
+        <Link
+          to={item.label}
           className="text-secondary-3 hover:text-primary-light-3 text-xs capitalize"
         >
-          {item}
-        </a>
+          {item.label}
+        </Link>
         {index !== props.items.length - 1 && (
           <span className="px-2 text-xs fa fa-chevron-right"></span>
         )}
@@ -65,7 +66,7 @@ class HeroBar extends Component {
                 </div>
                 <div className="text-primary-light-3 font-medium text-xl md:text-2xl lg:text-3xl">
                   <span className="capitalize">
-                    {this.props.breadcrumbs[this.props.breadcrumbs.length - 1]}
+                    {this.props.breadcrumbs[this.props.breadcrumbs.length - 1].label}
                   </span>
                 </div>
               </>

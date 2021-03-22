@@ -7,7 +7,7 @@ const UserElement = (props) => (
       <div className="flex -mt-1 px-2 justify-evenly">
         <div>
           <div className="text-base font-medium text-primary-dark-3">
-            Shanmukh Rao G
+            {props.userName}
           </div>
           <div className="text-xs font-medium text-neutral-2">
             tom@example.com
@@ -31,9 +31,9 @@ const UserElement = (props) => (
       aria-orientation="vertical"
       aria-labelledby="user-menu"
     >
-      <MenuItem isMobile icon="fa fa-id-card" label={"Profile"} />
-      <MenuItem isMobile icon="fa fa-cogs" label={"Settings"} />
-      <MenuItem isMobile icon="fa fa-sign-out-alt" label={"Logout"} />
+      <MenuItem isMobile icon="fa fa-id-card" label={"Profile"} onClick={(e) => props.onClick(e)} />
+      <MenuItem isMobile icon="fa fa-cogs" label={"Settings"} onClick={(e) => props.onClick(e)} />
+      <MenuItem isMobile icon="fa fa-sign-out-alt" label={"Logout"} onClick={(e) => props.onClick(e)} />
     </div>{" "}
   </>
 );

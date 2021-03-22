@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import LogoComponent from "../NavBar/LogoComponent";
+import {Link} from 'react-router-dom';
 
 export const LoginForm = (props) => {
-  const [userName, setUserName] = useState();
-  const [password, setPassWord] = useState();
+  const [userName, setUserName] = useState('');
+  const [password, setPassWord] = useState('');
   const [userError, setUserError] = useState();
   const [passError, setPassError] = useState();
   const [saveLocal, setSaveLocal] = useState(false);
@@ -53,8 +54,8 @@ export const LoginForm = (props) => {
               <input
                 type="radio"
                 name="type"
-                value="buyer"
-                checked={userType === "buyer"}
+                value="BUYER"
+                checked={userType === "BUYER"}
                 onChange={(val) => setUserType(val.currentTarget.value)}
               />
               <label className="block ml-1 mr-4 mb-2 text-sm" forname="type">
@@ -63,8 +64,8 @@ export const LoginForm = (props) => {
               <input
                 type="radio"
                 name="type"
-                value="builder"
-                checked={userType === "builder"}
+                value="BUILDER"
+                checked={userType === "BUILDER"}
                 onChange={(val) => setUserType(val.currentTarget.value)}
               />
               <label className="block ml-1 mr-2 mb-2 text-sm" forname="type">
@@ -125,12 +126,12 @@ export const LoginForm = (props) => {
                 </label>
               </div>
               <div className="">
-                <a
+                <Link
                   className="inline-block text-sm text-secondary-1 align-baseline hover:text-secondary-3"
-                  href="./forgot-password.html"
+                  to="/ForgotPassword"
                 >
                   Forgot Password?
-                </a>
+                </Link>
               </div>
             </div>
             <hr className="my-4 border-t" />

@@ -2,62 +2,92 @@ import React, { useState } from "react";
 import StyledTextBox from "../FormComponents/StyledTextBox";
 import StyledSelectBox from "../FormComponents/StyledSelectBox";
 import StyledMultiSelect from "../FormComponents/StyledMultiSelect";
-import { USER_TYPE } from "../constants";
+import { withRouter } from "react-router-dom";
 
-const COMMUNITY_LIST = ["cert", "erter", "rhfghj", "eyfdb"];
-const LOT_LIST = ["l1", "l2", "l3", "l4"];
-const COUNTRY_LIST = [
-  "12",
-  "121",
-  "1212",
-  "1ert2",
-  "f",
-  "1g2",
-  "2w1",
-  "1k2",
-  "1/2",
-  "1",
-  "2",
-  "1sd2",
-  "1sdgq2",
-];
-const STATE_LIST = [
-  "12",
-  "121",
-  "1212",
-  "1ert2",
-  "f",
-  "1g2",
-  "2w1",
-  "1k2",
-  "1/2",
-  "1",
-  "2",
-  "1sd2",
-  "1sdgq2",
-];
-const CITY_LIST = ["1", "2", "4", "67"];
+import {
+  USER_TYPE,
+  COMMUNITY_LIST,
+  CITY_LIST,
+  LOT_LIST,
+  COUNTRY_LIST,
+  STATE_LIST,ß
+} from "../constants";
+
 const USER_TYPE_LIST = Object.values(USER_TYPE);
 
-const UserForm = (props) => {
-  const {user} = props;
-  const [userType, setUserType] = useState(props.role);
-  const [firstName, setFirstName] = useState(user.firstName);
-  const [middleName, setMiddleName] = useState(user.middleName);
-  const [lastName, setLastName] = useState(user.lastName);
-  const [address1, setAddress1] = useState(user.address1);
-  const [address2, setAddress2] = useState(user.address2);
-  const [country, setCountry] = useState(user.country);
-  const [city, setCity] = useState(user.city);
-  const [stateValue, setStateValue] = useState(user.stateValue);
-  const [zip, setZip] = useState(user.zip);
-  const [phone, setPhone] = useState(user.phone);
-  const [email, setEmail] = useState(user.email);
+const UserForm = ({match, location, history}) => {
+  console.log('location', location.state);
+  const user = location.state?.user?.user || {};
+  const [userType, setUserType] = useState(location.state?.user?.type || "");
+  const [firstName, setFirstName] = useState(user.firstName || "");
+  const [middleName, setMiddleName] = useState(user.middleName || "");
+  const [lastName, setLastName] = useState(user.lastName || "");
+  const [address1, setAddress1] = useState(user.address1 || "");
+  const [address2, setAddress2] = useState(user.address2 || "");
+  const [country, setCountry] = useState(user.country || "");
+  const [city, setCity] = useState(user.city || "");
+  const [stateValue, setStateValue] = useState(user.stateValue || "");
+  const [zip, setZip] = useState(user.zip || "");
+  const [phone, setPhone] = useState(user.phone || "");
+  const [email, setEmail] = useState(user.email || "");
   const [communities, setCommunities] = useState(user.communities || []);
   const [lots, setLots] = useState(user.lots || []);
+  const [formError, setFormError] = useState();
+
+  const validator = () => {
+    return (
+      userType &&
+      firstName &&
+      lastName &&
+      address1 &&
+      city &&
+      state &&
+      country &&
+      zip &&
+      phone &&
+      email
+    );
+  };
+
+  const onSubmit = () => {
+    if (true && validator) {
+      setFormError("");
+      const userObject = {
+        firstName,
+        userType,
+        lastName,
+        address1,
+        address2,
+        middleName,
+        country,
+        stateValue,
+        zip,
+        phone,
+        email,
+        communities,
+        lots,
+      };
+      history.goBack();
+    } else {
+      setFormError("Please fill all mandatory fields");
+    }
+  };
 
   return (
     <>
+      <div className="py-6 text-center">
+        <span className="shadow text-lg text-primary-dark-3 uppercase">
+          {" Add new user "}
+        </span>
+      </div>
+      <div
+        className={`${
+          formError ? "" : "hidden"
+        } py-3 px-3 mx-3 mt-6 text-sm border-2 rounded-md bg-red-50 border-secondary-2 text-secondary-2`}
+      >
+        <span className="p-1 fa fa-exclamation-circle"></span>
+        {`Request failed : ${formError}`}
+      </div>
       <div className="grid gap-6 px-3">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div>
@@ -175,7 +205,7 @@ const UserForm = (props) => {
             />
           </div>
         </div>
-        {props.role === USER_TYPE.EMLOYEE && (
+        {userType === USER_TYPE.EMLOYEE && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div>
               <StyledMultiSelect
@@ -197,9 +227,22 @@ const UserForm = (props) => {
             </div>
           </div>
         )}
+        <div className="flex justify-around">
+          <button
+            className="border text-sm bg-primary-dark-3 text-white rounded-full px-4 py-2"
+            onClick={onSubmit}
+          >
+            <span className="fa fa-save"></span>
+            <span className="">{`  ${user ? "UPDATE" : "SAVE"} ${
+              userType || "USER"
+            }`}</span>
+          </button>
+        </div>
+
+        <div className="h-6"></div>
       </div>
     </>
   );
 };
 
-export default UserForm;
+export default withRouter(UserForm);

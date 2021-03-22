@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LogoComponent from "./LogoComponent";
 import MenuItem from "./MenuItem";
 import NotificationBell from "./NotificationBell";
 import UserElement from "./UserElement";
+import { withRouter } from 'react-router-dom';
 
 const TempMenuItems = [
   { label: "Dashboard", active: true },
   { label: "Projects", active: false },
   { label: "Settings", active: false },
 ];
-const NavHeader = () => {
+
+const NavHeader = ({history, userName, userType}) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const userName1 = 'werwer';
+  const onMenuItemClick = (itemName) => {
+    console.log('reached here');
+    if(itemName === 'Logout') {
+      history.push('/Logout');
+    }
+    if(itemName === 'home') {
+      history.push('/Home');
+    }
+  };
 
   return (
     <div className="min-w-full shadow-md border-neutral-4 border-b-0 fixed z-50">
@@ -25,13 +37,13 @@ const NavHeader = () => {
             <div className="hidden sm:block">
               <div className="ml-4 flex items-center md:ml-6">
                 <div className="border-l-2 border-neutral-1 p-2">
-                  <NotificationBell icon="fa-home" />
+                  <NotificationBell icon="fa-home" onClick={onMenuItemClick} />
                 </div>
                 <div className="border-l-2 border-neutral-1 p-2">
                   <NotificationBell icon="fa-bell" />
                 </div>
                 <div className="border-l-2 border-r-2 border-neutral-1 p-2">
-                  <UserElement showMobileMenu={showMobileMenu} setShowMobileMenu={setShowMobileMenu} />
+                  <UserElement userName={userName} onClick={onMenuItemClick} showMobileMenu={showMobileMenu} setShowMobileMenu={setShowMobileMenu} />
                 </div>
               </div>
             </div>
@@ -66,7 +78,7 @@ const NavHeader = () => {
                   </div>
                   <div className="ml-3">
                     <div className="text-base font-medium text-primary-dark-3">
-                      Shanmukh Rao G
+                      {userName}
                     </div>
                     <div className="text-sm font-medium leading-none text-neutral-2">
                       tom@example.com
@@ -78,9 +90,9 @@ const NavHeader = () => {
                 </div>
               </div>
               <div className="mt-3 px-2 space-y-1">
-                <MenuItem isMobile icon="fa fa-id-card" label={"Profile"} />
-                <MenuItem isMobile icon="fa fa-cogs" label={"Settings"} />
-                <MenuItem isMobile icon="fa fa-sign-out-alt" label={"Logout"} />
+                <MenuItem isMobile icon="fa fa-id-card" label={"Profile"} onClick={onMenuItemClick} />
+                <MenuItem isMobile icon="fa fa-cogs" label={"Settings"} onClick={onMenuItemClick} />
+                <MenuItem isMobile icon="fa fa-sign-out-alt" label={"Logout"} onClick={onMenuItemClick} />
               </div>
             </div>
           )}
@@ -90,4 +102,4 @@ const NavHeader = () => {
   );
 };
 
-export default NavHeader;
+export default withRouter(NavHeader);

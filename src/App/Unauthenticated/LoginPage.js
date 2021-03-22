@@ -1,23 +1,25 @@
 import React, { Component } from "react";
+import { Redirect, Router, withRouter } from "react-router-dom";
 import LoginForm from './LoginForm';
 
-class LoginPage extends Component{
 
-  onLogin(userType, userName, password, saveLocal) {
-    const result = true; //make api call
-    if (result && saveLocal && typeof Storage !== undefined) {
-      localStorage.setItem("user", userName);
-      localStorage.setItem("userType", userType);
+const LoginPage = (props) => {
+  const {history} = props;
+  
+  const onLogin = (userType, userName, password, saveLocal) => {
+    const result = true;
+    if (result && typeof Storage !== undefined) {
+      sessionStorage.setItem("user", userName);
+      sessionStorage.setItem("userType", userType);
     }
-  }
+    history.push("/Home");
+  };
 
-  render(){
-    return(
+  return (
       <div className="container mx-auto min-w-full min-h-screen login-image">
-        <LoginForm onLogin={this.onLogin} />
+        <LoginForm onLogin={onLogin} />
       </div>
     );
-  }
 }
-
-export default LoginPage;
+ 
+export default withRouter(LoginPage);

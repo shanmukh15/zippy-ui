@@ -6,32 +6,42 @@ const UserSearchItem = (props) => {
     return items.map((item) => (
       <div
         key={item.name}
-        className="rounded-md shadow-md border-2 border-neutral-1 p-1.5 m-4"
+        className="min-w-min max-w-xs shadow my-4 scale-95 mx-auto hover:ring-neutral-1 hover:ring-1 rounded-md
+        transition duration-600 ease-in-out transform hover:-translate-y-1 hover:scale-100 hover:shadow-lg"
+        onClick={() => props.onClick(item)}
       >
-        <div className="flex justify-between">
-          <div className="ml-2 min-h-12">
-            <span className="text-base capitalize">{item.name}</span>
-            <span className="text-sm text-gray-400">{` (${item.type})`}</span>
-            { item.projects && <div className="text-sm text-gray-400">{`${item.projects.length} projects`}</div>}
-            { !item.projects && <div className="text-sm text-gray-400">{' - '}</div>}
+        <div className="flex justify-between h-24 w-80 lg:w-72 px-4 py-2">
+          <div className="flex flex-col justify-evenly">
+            <div className="">
+              <span className="text-md lg:text-lg capitalize">
+                {item.name}
+              </span>
+              <div>
+                <span className="text-neutral-2 leading-tight text-sm lg:leading-normal lg:text-base">{` (${item.type})`}</span>
+              </div>
+            </div>
+
+            {item.projects && (
+              <div className="text-neutral-2 leading-tight text-sm lg:leading-normal lg:text-base">
+                {`${item.projects.length} projects`}
+              </div>
+            )}
+            {!item.projects && (
+              <div className="text-neutral-2 leading-tight text-sm lg:leading-normal lg:text-base">
+                {" - "}
+              </div>
+            )}
           </div>
-          <div className="self-center mr-2">
-            <span className="text-primary-dark-2 hover:text-primary-light-3 fas fa-angle-right"> </span>
+          <div className="self-center w-2 mr-2">
+            <span className="text-primary-dark-2 hover:text-primary-light-3 fas fa-angle-right">
+              {" "}
+            </span>
           </div>
         </div>
       </div>
     ));
   };
-
-  return props.results?.length ? (
-    generateSearchResultItem(props.results)
-  ) : (
-    <NoResultsPage
-      message={
-        "Try searching with user details or Click ' + ' for new user creation"
-      }
-    />
-  );
+  return ( generateSearchResultItem(props.results) )
 };
 
 export default UserSearchItem;

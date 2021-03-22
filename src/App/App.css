@@ -3,12 +3,8 @@
 @tailwind utilities;
 
 .template-background {
-    background-image: url("../../assests/78797.jpg");
+    background-image: url("../../assests/buildingbackground.jpg");
     background-size: contain;
-    opacity: 0.3;
-    background-blend-mode: lighten;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center;
     background-size: 80%;
   }
@@ -19,7 +15,40 @@
 }
 
 .login-image {
-  background-image: url('../../assests/ej-yao-D46mXLsQRJw-unsplash.jpg');
+  background-image: url('../../assests/construction_blue_full.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.forgot-password {
+  background-image: url('../../assests/forgotpassword.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.designcenter {
+  background-image: url('../../assests/designcenter.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.profiles {
+  background-image: url('../../assests/Profiles.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.constructionstatus {
+  background-image: url('../../assests/construction_status.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.catalog {
+  background-image: url('../../assests/catalog.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

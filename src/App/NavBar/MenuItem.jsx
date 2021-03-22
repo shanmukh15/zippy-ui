@@ -3,7 +3,7 @@ import React from "react";
 const MenuItem = (props) => {
   return (
     <a
-      href="#"
+      onClick={() => props.onClick(props.label)}
       key={props.label}
       className={
         props.isMobile
