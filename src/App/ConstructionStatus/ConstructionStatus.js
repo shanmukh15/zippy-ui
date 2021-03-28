@@ -37,7 +37,7 @@ const statusGraphicGenerator = (stepper, currentStep) => {
 
 const ConstructionStatus = (props) => {
   const userType = props.userType();
-  const [showProjectDetails, setShowProjectDetails] = useState(true);
+  const [showProjectDetails, setShowProjectDetails] = useState(false);
   const [errorProject, setErrorProject] = useState();
   const [accordianState, setAccordianState] = useState(true);
   const [city, setCity] = useState();
@@ -92,7 +92,7 @@ const ConstructionStatus = (props) => {
                   />
                 </div>
               </div>
-              <button className="ml-4 mb-4 rounded-lg px-4 py-2 text-center bg-primary-dark-3 text-white">
+              <button onClick={() => setShowProjectDetails(!showProjectDetails)} className="ml-4 mb-4 rounded-lg px-4 py-2 text-center bg-primary-dark-3 text-white">
                 <i className="fa fa-search"></i>
                 {"  Search"}
               </button>
