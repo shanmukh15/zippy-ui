@@ -60,8 +60,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Graphik", "sans-serif"],
-        serif: ["Merriweather", "serif"],
+        sans: ["Raleway", "Graphik", "sans-serif"],
+        serif: ["Cormorant Upright", "Merriweather", "serif"],
+        title: ["Orbitron", "Merriweather", "serif"],
       },
     },
   },

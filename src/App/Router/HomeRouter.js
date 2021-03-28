@@ -11,6 +11,7 @@ import BuilderTemplate from "../PageTemplate/BuilderTemplate";
 import UserMaintenanceLanding from "../UserMaintenance/UserMaintenanceLanding";
 import UserDetails from "../UserMaintenance/UserDetails";
 import ProjectInfo from "../UserMaintenance/ProjectInfo";
+import CatalogLanding from "../ProjectCatalog/CatalogLanding";
 
 export const HomeRouter = ({ match, history, location, userType }) => {
   useEffect(() => {
@@ -49,18 +50,18 @@ export const HomeRouter = ({ match, history, location, userType }) => {
             <Route exact path={`${match.path}/`}>
               <BuilderTemplate />
             </Route>
-            <Route exact path={`${match.path}/AddUser`}>
+            <Route exact path={`${match.path}/profiles/AddUser`}>
               <UserForm />
             </Route>
-            <Route exact path={`${match.path}/user/:name`} render={ (props) => (<UserDetails />)} />
-            <Route exact path={`${match.path}/user/:name/EditUser`} render={ (props) => (<UserForm />)} />
-            <Route exact path={`${match.path}/user/:name/:id`} render={ (props) => (<ProjectInfo />)} />
-            <Route exact path={`${match.path}/user/:name/NewProject`} render={ (props) => (<ProjectInfo />)} />
+            <Route exact path={`${match.path}/profiles/user/:name`} render={ (props) => (<UserDetails />)} />
+            <Route exact path={`${match.path}/profiles/user/:name/EditUser`} render={ (props) => (<UserForm />)} />
+            <Route exact path={`${match.path}/profiles/user/:name/:id`} render={ (props) => (<ProjectInfo />)} />
+            <Route exact path={`${match.path}/profiles/user/:name/NewProject`} render={ (props) => (<ProjectInfo />)} />
             <Route path={`${match.path}/DesignCenter`}>
               <ForgotPassword />
             </Route>
             <Route path={`${match.path}/Catalog`}>
-              <ForgotPassword />ß
+              <CatalogLanding userType={() => userType} />
             </Route>
             <Route path={`${match.path}/status`}>
               <LoginPage />

@@ -79,3 +79,18 @@ export const HOME_PLAN = [
   "Sandstone Bridge",
   "Center Fender Ceils",
 ];
+export const DOC_LIST = {
+  buyer: [
+    "Contractual Agreement",
+    "Home Design Options",
+    "Plot Map",
+    "Home Plan",
+    "Change Order",
+    "Appliances Warranty Info",
+  ],
+  builder: [
+    "Preferred Lenders",
+    "Community Amenities",
+    "utilities Contact Info",
+  ],
+};

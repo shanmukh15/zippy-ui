@@ -17,7 +17,7 @@ const UserDetails = ({location, match, history}) => {
     : 0;
 
   const onEditUser = () => {
-    history.push(`/Home/user/${user.user.firstName}/EditUser`, {user});
+    history.push(`/Home/profiles/user/${user.user.firstName}/EditUser`, {user});
   }
   
   const onBackButtonClick = () => {
@@ -25,11 +25,11 @@ const UserDetails = ({location, match, history}) => {
   }
 
   const onProjectClick = (item) => {
-    history.push(`/Home/user/${user.user.firstName}/${item.id}`, {user, project: item});
+    history.push(`/Home/profiles/user/${user.user.firstName}/${item.id}`, {user, project: item});
   }
 
   const onAddNewProject = () => {
-    history.push(`/Home/user/${user.user.firstName}/NewProject`, {user});
+    history.push(`/Home/profiles/user/${user.user.firstName}/NewProject`, {user});
   }
 
   const projectGenerator = (projects) => {

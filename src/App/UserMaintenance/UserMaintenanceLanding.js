@@ -18,7 +18,7 @@ const UserMaintenanceLanding = ({ match, location, history }) => {
   };
 
   const navigateToUserDetails = (user) => {
-    history.push(`/Home/user/${user.user.firstName}`, {user});
+    history.push(`/Home/profiles/user/${user.user.firstName}`, {user});
   }
 
   return (
@@ -29,7 +29,7 @@ const UserMaintenanceLanding = ({ match, location, history }) => {
             <UserSearch onSubmit={fetchUserList} />
           </div>
           <div className="my-1.5">
-            <Link to={"/Home/AddUser"}>
+            <Link to={"/Home/profiles/AddUser"}>
               <div className="hover:scale-100 text-primary-dark-2  hover:text-primary-light-3 ">
                 <span className="border border-primary-dark-3 hover:border-primary-light-3 rounded-full p-2 ">
                   <i className="fas fa-user-plus"></i>

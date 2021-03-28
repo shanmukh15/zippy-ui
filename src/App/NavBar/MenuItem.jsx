@@ -13,7 +13,7 @@ const MenuItem = (props) => {
       role="menuitem"
     >
       <span className={`${props.icon} mx-2`}></span>
-      {props.label}
+      <span>{props.label}</span>
     </a>
   );
 };

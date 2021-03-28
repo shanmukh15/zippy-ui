@@ -2,52 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;600;700&family=Orbitron:wght@400;500&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+
 .template-background {
-    background-image: url("../../assests/buildingbackground.jpg");
-    background-size: contain;
-    background-position: center;
-    background-size: 80%;
-  }
+  background-image: url("../../assests/buildingbackground.jpg");
+  background-size: contain;
+  background-position: center;
+  background-size: 80%;
+}
 
 .template-shade {
   /*background: linear-gradient(180deg, #F2F2F2 0%, #F2F2F2 25%, #002E40 25%, #002E40 100%);*/
-  background: #002E40;
+  background: #002e40;
 }
 
 .login-image {
-  background-image: url('../../assests/construction_blue_full.jpg');
+  background-image: url("../../assests/construction_blue_full.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .forgot-password {
-  background-image: url('../../assests/forgotpassword.jpg');
+  background-image: url("../../assests/forgotpassword.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .designcenter {
-  background-image: url('../../assests/designcenter.jpg');
+  background-image: url("../../assests/designcenter.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .profiles {
-  background-image: url('../../assests/Profiles.jpg');
+  background-image: url("../../assests/Profiles.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .constructionstatus {
-  background-image: url('../../assests/construction_status.jpg');
+  background-image: url("../../assests/construction_status.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .catalog {
-  background-image: url('../../assests/catalog.jpg');
+  background-image: url("../../assests/catalog.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
