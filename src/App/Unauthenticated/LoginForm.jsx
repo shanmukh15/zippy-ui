@@ -11,7 +11,7 @@ export const LoginForm = (props) => {
   const [userError, setUserError] = useState();
   const [passError, setPassError] = useState();
   const [saveLocal, setSaveLocal] = useState(false);
-  const [userType, setUserType] = useState();
+  const [userType, setUserType] = useState(USER_TYPE.BUYER);
   const [formError, setFormError] = useState();
   const [isRequestInProgress, setRequestInProgress] = useState(false);
 
@@ -54,7 +54,7 @@ export const LoginForm = (props) => {
             <div className="flex justify-center mb-6">
               <StyleToggedBox
                 onChange={onUserTypeChange}
-                name={userType}
+                name={'userType'}
                 checked={userType === USER_TYPE.BUILDER}
                 label1={"Buyer"}
                 label2={"Builder"}
