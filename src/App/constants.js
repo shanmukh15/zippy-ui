@@ -94,3 +94,6 @@ export const DOC_LIST = {
     "utilities Contact Info",
   ],
 };
+export const STEP_LIST = [
+  'started', 'Framing', 'Plumbing', 'Electrical', 'Dry Wall', 'Flooring', 'Handover'
+];

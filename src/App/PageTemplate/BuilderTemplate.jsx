@@ -35,7 +35,7 @@ const BuilderTemplate = ({ match }) => {
           }}
         />
       </Link>
-      <Link to={`${match.url}/status`}>
+      <Link to={`${match.url}/ConstructionStatus`}>
         <HomeSections
           item={{
             label: "Project Status",

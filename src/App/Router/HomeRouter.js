@@ -12,6 +12,7 @@ import UserMaintenanceLanding from "../UserMaintenance/UserMaintenanceLanding";
 import UserDetails from "../UserMaintenance/UserDetails";
 import ProjectInfo from "../UserMaintenance/ProjectInfo";
 import CatalogLanding from "../ProjectCatalog/CatalogLanding";
+import ConstructionStatus from "../ConstructionStatus/ConstructionStatus";
 
 export const HomeRouter = ({ match, history, location, userType }) => {
   useEffect(() => {
@@ -63,8 +64,8 @@ export const HomeRouter = ({ match, history, location, userType }) => {
             <Route path={`${match.path}/Catalog`}>
               <CatalogLanding userType={() => userType} />
             </Route>
-            <Route path={`${match.path}/status`}>
-              <LoginPage />
+            <Route path={`${match.path}/ConstructionStatus`}>
+              <ConstructionStatus userType={() => userType} />
             </Route>
             <Route path={`${match.path}/profiles`}>
               <UserMaintenanceLanding />

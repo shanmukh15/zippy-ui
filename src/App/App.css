@@ -17,39 +17,39 @@
 }
 
 .login-image {
-  background-image: url("../../assests/construction_blue_full.jpg");
+  background-image: url("/assests/construction_blue_full.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .forgot-password {
-  background-image: url("../../assests/forgotpassword.jpg");
+  background-image: url("/assests/forgotpassword.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .designcenter {
-  background-image: url("../../assests/designcenter.jpg");
+  background-image: url("/assests/designcenter.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .profiles {
-  background-image: url("../../assests/Profiles.jpg");
+  background-image: url("/assests/Profiles.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .constructionstatus {
-  background-image: url("../../assests/construction_status.jpg");
+  background-image: url("/assests/construction_status.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .catalog {
-  background-image: url("../../assests/catalog.jpg");
+  background-image: url("/assests/catalog.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

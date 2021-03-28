@@ -8,7 +8,7 @@ const LogoComponent = (props) => {
         <span className="inline-block mx-2 font-thin text-xl md:text-2xl">{"  |  "}</span>
         <img
           className="h-6 w-18 mt-1"
-          src="./assests/Yurru_small_logo.png"
+          src="/assests/Yurru_small_logo.png"
           alt="Zippy"
         />
       </div>
@@ -21,7 +21,7 @@ const LogoComponent = (props) => {
           <div className="mt-3 text-md">{"powered by   "}</div>
           <img
           className="h-7 w-18 mt-2"
-          src="./assests/Yurru_small_logo.png"
+          src="/assests/Yurru_small_logo.png"
           alt="Zippy"
         />
         </div>
