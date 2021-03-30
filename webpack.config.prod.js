@@ -2,8 +2,6 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const { dirname } = require("path");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -33,15 +31,7 @@ module.exports = {
     filename: "bundle.js",
     clean: true
   },
-  devServer: {
-    contentBase: path.join(__dirname, "dist/"),
-    port: 3000,
-    publicPath: "/",
-    hotOnly: true,
-    historyApiFallback: true,
-  },
   plugins: [
-    new BundleAnalyzerPlugin({analyzerMode: 'server'}),
     new MiniCssExtractPlugin(), 
     new HtmlWebpackPlugin({
       title: "Zippy | Yuuru"

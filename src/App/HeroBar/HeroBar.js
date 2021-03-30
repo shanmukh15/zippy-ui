@@ -41,7 +41,7 @@ const HeroBar = (props) => (
           </>
         ) : (
           <>
-            <div className="mt-2 pt-1 md:pt-2 lg:pt-4">
+            <div className="pt-1 md:pt-2 lg:pt-4">
               <BreadCrumbs items={props.breadcrumbs} />
             </div>
             <div className="text-primary-light-3 font-medium text-xl md:text-2xl lg:text-3xl">
