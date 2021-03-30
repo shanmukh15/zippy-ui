@@ -1,5 +1,6 @@
 module.exports = {
-  purge: ["./src/**/*.html", "./src/**/*.js"],
+  purge: { enabled: true, layers: ['components', 'utilities'], 
+  content :["./src/App/**/*.js", "./src/App/**/*.jsx", "./src/App/*.css"]},
   darkMode: "class",
   theme: {
     extend: {
