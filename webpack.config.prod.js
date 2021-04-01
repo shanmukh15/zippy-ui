@@ -39,7 +39,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(__dirname, "assests"), to: path.resolve(__dirname, "dist", "assests") }
+        { from: path.resolve(__dirname, "assests"), to: path.resolve(__dirname, "dist", "assests") },
+        { from: path.resolve(__dirname, "_redirects"), to: path.resolve(__dirname, "dist") }
       ],
     }),
   ],
