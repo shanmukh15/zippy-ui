@@ -11,7 +11,7 @@ export const MainRouter = ({match, history, location}) => {
 
   useEffect(() => {
     if (true) {
-      console.log(
+      console.log("Printing from main router :: ",
         "Match: ",
         match,
         "History: ",

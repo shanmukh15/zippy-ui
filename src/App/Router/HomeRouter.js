@@ -17,7 +17,7 @@ import ConstructionStatus from "../ConstructionStatus/ConstructionStatus";
 export const HomeRouter = ({ match, history, location, userType }) => {
   useEffect(() => {
     if (true) {
-      console.log(
+      console.log("Printing from Home Router :: ",
         "Match: ",
         match,
         "History: ",
