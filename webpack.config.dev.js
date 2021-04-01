@@ -33,7 +33,7 @@ module.exports = {
     filename: "bundle.js",
     clean: true
   },
-  devtool : 'eval-cheap-module-source-map',
+  devtool : 'source-map',
   devServer: {
     contentBase: path.join(__dirname, "dist/"),
     port: 3000,

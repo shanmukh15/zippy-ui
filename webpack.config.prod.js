@@ -31,7 +31,7 @@ module.exports = {
     filename: "bundle.js",
     clean: true
   },
-  devtool : 'eval-cheap-module-source-map',
+  devtool : 'source-map',
   plugins: [
     new MiniCssExtractPlugin(), 
     new HtmlWebpackPlugin({
