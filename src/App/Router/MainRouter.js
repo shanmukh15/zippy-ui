@@ -5,13 +5,13 @@ import Logout from "../PageTemplate/Logout";
 import LoginPage from "../Unauthenticated/LoginPage";
 import HeadTemplate from "../PageTemplate/HeadTemplate";
 import ForgotPassword from "../Unauthenticated/ForgotPassword";
-import useRouterLogger from './RouterLogger';
+import useRouterLogger from "./RouterLogger";
 
-export const MainRouter = ({match, history, location}) => {
-
+export const MainRouter = ({ match, history, location }) => {
   useEffect(() => {
     if (true) {
-      console.log("Printing from main router :: ",
+      console.log(
+        "Printing from main router :: ",
         "Match: ",
         match,
         "History: ",
@@ -24,7 +24,9 @@ export const MainRouter = ({match, history, location}) => {
 
   return (
     <Switch>
-      <Route path="/Home" render={(props) => (<HeadTemplate { ...props} />)} />
+      <Route path="/Home">
+        <HeadTemplate />
+      </Route>
       <Route path="/Logout">
         <Logout />
       </Route>
